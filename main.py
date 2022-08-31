@@ -1,5 +1,6 @@
+
 def get_string(m):
-    my_string = input(m)
+    my_string =input(m)
     return my_string
 
 
@@ -7,7 +8,7 @@ def get_integer(m):
     my_integer = int(input(m))
     return my_integer
 
-def add_to_order(L, order_list):
+def add_to_order(L ,order_list):
     print("_" * 50)
     for i in range(0, len(L)):
         output = "{} : {} ${}".format(i, L[i][0], L[i][1])
@@ -20,8 +21,7 @@ def add_to_order(L, order_list):
     output = "You have added {} {} to your order".format(quantity, L[which_pasta][0])
     print(output)
 
-    order_list.append([quantity, L[which_pasta][0], L[which_pasta][1]])
-
+    order_list.append([quantity, L[which_pasta][0],  L[which_pasta][1]])
 
 def delete_from_order(order_list):
     print("_" * 50)
@@ -39,6 +39,14 @@ def delete_from_order(order_list):
         print(output)
         order_list.pop(which_index)
 
+
+    if len(order_list) == 0:
+        print("_ " *50)
+        print("You have no items in the order")
+        print("_ " *50)
+
+        return None
+
     print("_" * 50)
     print("This is your updated order")
     total = 0
@@ -52,20 +60,81 @@ def delete_from_order(order_list):
     print("_" * 50)
     return None
 
+def delivery_pick_up(customer_details, delivery_details, pickup_details):
 
-def review_order(order_list):
+    # check if list is not empty
+    # option to leave
+    # if continue clear current list
+
+    if customer_details:
+        print("You have already entered the customer information")
+        print("This is the customer information that was previously added")
+
+        list_full = get_string("Press 'C' to clear customer information\nPress 'Y' if this information is correct and you would like to exit")
+
+        if list_full == "c":
+            del customer_details[:]
+            del pickup_details[:]
+            del delivery_details[:]
+            print("The information has been cleared")
+            print("Please enter new information")
+
+        elif list_full == "y":
+            print("The customer information is staying the same ")
+            return None
+
+    user_choice = get_string("Would you like to pick up (p) your order or get it delivered (d)? ->")
+
+    if user_choice == "p":
+        name = get_string("Please enter a name for your order->")
+        number = get_string("Please enter your phone number ->")
+
+        customer_details.append([name, number])
+        pickup_details.append([name, number])
+
+        print("This is your contact information for your order")
+        print("_" * 50)
+
+        output = "Name: {} \nPhone Number: {}".format(pickup_details[0][0], pickup_details[0][1])
+        print(output)
+        print("_" * 50)
+
+    elif user_choice == "d":
+        name = get_string("Please enter a name for your order ->")
+        number = get_string("Please enter a phone number for your order -> ")
+        address = get_string("Pleas enter the address for delivery (Number, Street, Suburb) ->")
+        customer_details.append([name, number, address])
+        delivery_details.append([name ,number ,address])
+
+        print("This is your information for your order")
+        print("_" * 50)
+
+        output = "Name : {} \nPhone number : {} \nAddress : {}".format(delivery_details[0][0], delivery_details[0][1], customer_details[0][2])
+        print(output)
+        print("_" * 50)
+
+def review_order(order_list, delivery_details):
     print("_" * 50)
     total = 0
+
+    if len(order_list) == 0:
+        print("You have no items in the order")
+        return None
+
     for x in order_list:
         subtotal = x[0] * x[2]
         total += subtotal
         output = "{} x {:<30} at ${:.2f}".format(x[0], x[1], subtotal)
         print(output)
-    output = "Total = ${:.2f}".format(total)
+
+    if len(delivery_details) > 0:
+        print("Delivery Charge of $3")
+        total += 3
+
+    output = "Total = ${}".format(total)
     print(output)
     print("_" * 50)
     return None
-
 
 def print_pasta(L):
     print("_" * 50)
@@ -73,7 +142,6 @@ def print_pasta(L):
         output = "{} ${}".format(x[0], x[1])
         print(output)
     print("_" * 50)
-
 
 def main():
     pasta_list = [
@@ -93,10 +161,17 @@ def main():
         ["a", "Add Pasta"],
         ["r", "Review Order"],
         ["d", "Delete from Order"],
+        ["g", "Delivery or Pickup"],
         ["q", "Quit"]]
 
     order_list = []
     order_list = [[4, "Ravioli di Ricotta", 20], [3, "Spaghetti Pomodoro", 16]]
+
+    customer_details = []
+
+    delivery_details = []
+
+    pickup_details = []
 
     run_program = True
     while run_program:
@@ -109,15 +184,20 @@ def main():
         elif user_input == "a":
             add_to_order(pasta_list, order_list)
         elif user_input == "r":
-            review_order(order_list)
+            review_order(order_list, delivery_details)
         elif user_input == "d":
             delete_from_order(order_list)
+        elif user_input == "g":
+            delivery_pick_up(customer_details, delivery_details, pickup_details)
         elif user_input == "q":
             run_program = False
             print("You have quit")
 
-
 main()
+
+
+
+
 
 
 
