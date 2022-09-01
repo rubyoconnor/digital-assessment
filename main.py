@@ -3,7 +3,6 @@ def get_string(m):
     my_string =input(m)
     return my_string
 
-
 def get_integer(m):
     my_integer = int(input(m))
     return my_integer
@@ -66,9 +65,27 @@ def delivery_pick_up(customer_details, delivery_details, pickup_details):
     # option to leave
     # if continue clear current list
 
-    if customer_details:
+    if len(customer_details) > 0:
         print("You have already entered the customer information")
-        print("This is the customer information that was previously added")
+
+        if len(delivery_details) > 0:
+            print("_" * 50)
+            print("This is the previously entered customer details for delivery")
+            print("_" * 50)
+
+            output = "Name: {} \nPhone Number: {} \nAddress: {}".format(delivery_details[0][0], delivery_details[0][1],
+                                                                        delivery_details[0][2])
+            print(output)
+            print("_" * 50)
+
+        elif len(pickup_details) > 0:
+            print("_" * 50)
+            print("This is the previously added customer details for pick up")
+            print("_" * 50)
+
+            output = "Name: {} \nPhone Number: {}".format(pickup_details[0][0], pickup_details[0][1])
+            print(output)
+            print("_" * 50)
 
         list_full = get_string("Press 'C' to clear customer information\nPress 'Y' if this information is correct and you would like to exit")
 
@@ -95,9 +112,13 @@ def delivery_pick_up(customer_details, delivery_details, pickup_details):
         print("This is your contact information for your order")
         print("_" * 50)
 
+
         output = "Name: {} \nPhone Number: {}".format(pickup_details[0][0], pickup_details[0][1])
         print(output)
         print("_" * 50)
+
+
+
 
     elif user_choice == "d":
         name = get_string("Please enter a name for your order ->")
@@ -109,9 +130,84 @@ def delivery_pick_up(customer_details, delivery_details, pickup_details):
         print("This is your information for your order")
         print("_" * 50)
 
-        output = "Name : {} \nPhone number : {} \nAddress : {}".format(delivery_details[0][0], delivery_details[0][1], customer_details[0][2])
+        output = "Name : {} \nPhone number : {} \nAddress : {}".format(delivery_details[0][0], delivery_details[0][1], delivery_details[0][2])
         print(output)
         print("_" * 50)
+
+def confirm_order(order_list, delivery_details, pickup_details, customer_details):
+
+    if len(customer_details) == 0:
+        print("_" * 50)
+        print("You have not entered your customer details. You cannot confirm order without filling out your customer details first")
+        print("_" * 50)
+        return None
+
+    if len(order_list) == 0:
+        print("_"*50)
+        print("You have no pastas in your order. Order a pasta before you confirm your order")
+        print("_" * 50)
+        return None
+
+    if len(delivery_details) > 0:
+        print("_"*50)
+        print("THIS IS THE CUSTOMER DETAILS FOR DELIVERY")
+        print("_" * 50)
+
+        output = "Name: {} \nPhone Number: {} \nAddress: {}".format(delivery_details[0][0], delivery_details[0][1], delivery_details[0][2])
+        print(output)
+        print("_" * 50)
+
+    elif len(pickup_details) > 0:
+        print("_" * 50)
+        print("THIS IS THE CUSTOMER DETAILS FOR PICK UP")
+        print("_" * 50)
+
+        output = "Name: {} \nPhone Number: {}".format(pickup_details [0][0], pickup_details [0][1])
+        print(output)
+        print("_" * 50)
+
+
+    print("_"*50)
+    print("YOUR ORDER - ")
+    print("_" * 50)
+    total = 0
+
+    for x in order_list:
+        subtotal = x[0] * x[2]
+        total += subtotal
+        output = "{} x {:<30} at ${:.2f}".format(x[0], x[1], subtotal)
+        print(output)
+
+    if len(delivery_details) > 0:
+        print("Delivery Charge of $3")
+        total += 3
+
+    output = "Total = ${}".format(total)
+    print(output)
+    print("_" * 50)
+
+    user_details = get_string("COMFIRM ORDER (Y/N)? ")
+    if user_details == "y":
+        print("THANK YOU FOR ORDERING")
+        print("YOUR ORDER HAS BEEN CONFIRMED")
+
+        order_again = get_string("Would you like to order again (Y/N)?")
+        if order_again == "y":
+            print("New order starting...")
+            del customer_details[:]
+            del delivery_details[:]
+            del pickup_details[:]
+            del order_list[:]
+            return None
+
+        elif order_again == "n":
+            print("Program over")
+            return False
+
+    elif user_details == "n":
+        print("RETURNING THE MAIN MENU")
+        return None
+
 
 def review_order(order_list, delivery_details):
     print("_" * 50)
@@ -126,6 +222,7 @@ def review_order(order_list, delivery_details):
         total += subtotal
         output = "{} x {:<30} at ${:.2f}".format(x[0], x[1], subtotal)
         print(output)
+
 
     if len(delivery_details) > 0:
         print("Delivery Charge of $3")
@@ -162,6 +259,7 @@ def main():
         ["r", "Review Order"],
         ["d", "Delete from Order"],
         ["g", "Delivery or Pickup"],
+        ["c", "Confirm Order"],
         ["q", "Quit"]]
 
     order_list = []
@@ -189,11 +287,17 @@ def main():
             delete_from_order(order_list)
         elif user_input == "g":
             delivery_pick_up(customer_details, delivery_details, pickup_details)
+        elif user_input == "c":
+            result = confirm_order(order_list, delivery_details, pickup_details, customer_details)
+            if result is False:
+                run_program =False
         elif user_input == "q":
             run_program = False
             print("You have quit")
 
 main()
+
+
 
 
 
