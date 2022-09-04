@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Planning for pasta python</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Description" lang="en" content="ADD SITE DESCRIPTION">
+		<meta name="author" content="ADD AUTHOR INFORMATION">
+		<meta name="robots" content="index, follow">
+
+		<!-- icons -->
+		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+		<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="assets/highlight/styles/tomorrow.css">
+<script src="assets/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+       
+
+		<!-- Override CSS file - add your own CSS rules -->
+		<link rel="stylesheet" href="assets/css/styles.css">
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1 class="header-heading">Pasta Planning</h1>
+			</div>
+			<div class="nav-bar">
+				<ul class="nav">
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+				</ul>
+			</div>
+			<div class="content">
+
+                
+
+			
+                    
+					<h1>Brief</h1>
+					<h2>To create a program in which someone is able to enter customer details, 
+						kinds of pasta ordered and the pick-up or delivery details into a computer 
+						and have it display the delivery details, the itemised order, and total cost. 
+					</h2>
+					<hr>
+
+    <!-- Heading levels -->
+
+	<h1>Initial Project Backlog</h1>
+	<img class="img-responsive-1" src="assets/img/initial_project_backlog.png" alt=""> 
+
+
+	<h2>Describing Relevant Implications</h2>
+	<h3> Usability</h3>
+	<h4>Usability means that the user can intutively learn the 
+		program quickly. Options are easy to understand and it is 
+		easy to find appropriate actions. The program has error prevention 
+		methods and communicates to the user about then. 
+
+	<h3>Functionality</h3>
+	<h4>Functionality means that the program must work properly. This means 
+		it does not crash, it does not do incorrect arithemetic and variables
+		are all reset once order is complete. The program should work as intended. 
+
+	<h3>Sustainability and Future Proofing</h3>
+	<h4>Sustainability and future proofing is making the program
+		so that it is able to be updated and maintained. The program
+		should be able to have new feature added reasonably easily. It should
+		be able to be handed over to another developer and they should be able to understand it quickly. 
+	</h4>
+
+	
+	</h4>
+	</h4>
+    <h1>Sprint One</h1>
+
+	<h3>Aim: Create a program that prints out the pasta menu and allows the user to quit the program.</h3>
+
+	<h4>Rough Program Plan</h4>
+	<img class="img-responsive" src="assets/img/plan_sprint_1.jpg" alt=""> 
+
+	<h3>Sprint 1 Board in Progress</h3>
+	<img class="img-responsive-1" src="assets/img/sprint_1_board_.png" alt=""> 
+
+	<h3>Basic Test of Program</h3>
+	<img class="img-responsive" src="assets/img/basic_test_s1.png" alt=""> 
+
+	<h3>Sprint 1 Review</h3>
+	<h4> In my first sprint, the user can only print the menu and quit the program. 
+		It is set up in a loop which is good as it makes it easy for future sprints and additions. 
+		In the next sprint I am going to add a function that enables the user to add a pasta to their order. 
+		</h4>
+
+
+
+	<h1>Sprint Two</h1>
+
+	<h3>Aim: For the user to be able to add pasta to their order</h3>
+
+	<h4>Rough Program Plan</h4>
+	<img class="img-responsive" src="assets/img/sprint_2_plan.jpg" alt=""> 
+
+	<h3>Sprint 2 Board in Progress</h3>
+	<img class="img-responsive-1" src="assets/img/sprint_2_board_.png" alt=""> 
+
+	<h3>Basic Test of Program</h3>
+	<img class="img-responsive" src="assets/img/basic_test_s2.png" alt=""> 
+
+
+	<h3>Sprint 2 Review</h3>
+	<h4> In sprint 2, the user can now also add pasta to their order. Although I have
+		not added a order_list into the main function so when the user adds pasta there is 
+		a message saying "You have added (quantity) (name of pasta) to your order". This is to inform the user
+		that adding their order was successful. But there is not actually an order_list in which the pasta is 
+		added to. In the next sprint (sprint 3) I am going to add in a function so that the user can review their order.
+		In this sprint I will add in the order_list in the main function and make it so when the user adds pasta to their order it
+		will be added the users order to the order_list. 
+	</h4>
+
+<h4></h4>
+
+	<h1>Sprint Three</h1>
+
+	<h3>Aim: For the user to be able to review their order</h3>
+
+	<h4>Rough Program Plan</h4>
+	<img class="img-responsive" src="assets/img/sprint_3_plan.jpg" alt=""> 
+
+	<h3>Sprint 3 Board in Progress</h3>
+	<img class="img-responsive-1" src="assets/img/sprint_3_board_.png" alt=""> 
+
+	<h3>Basic Test of Program</h3>
+	<img class="img-responsive" src="assets/img/sprint_3_basic_test.png" alt=""> 
+
+	<h3>Problem with my review order</h3>
+	<img class="img-responsive" src="assets/img/sprint_3_problem.png" alt=""> 
+
+	<h3>This is code I added which will add the user's chosen pasta to the order_list in the main function</h3>
+	<img class="img-responsive" src="assets/img/sprint_3_code_orderlist.png" alt=""> 
+
+
+
+	<h3>Sprint 3 Review</h3>
+	<h4> In this sprint, I added in a review_order function which enables the user
+		to be able to see the current order and the price including the overall total. 
+		To be able to do this I had to change the prices in the pasta_list to be integers. 
+		A problem with the review order at the moment is that if you order a meal and then
+		order the same thing again, the program does not add these together and counts them separatly. 
+		(this is shown in the photo above). Something important which was added 
+		in this sprint is order_list in the main function. When the user orders a pasta this is added and stored in the 
+		order list. 
+		
+		In sprint 4, I am going to create a delete_from_order function in which the user can remove pastas from their order. 
+	</h4>
+
+	<h1>Sprint Four</h1>
+
+	<h3>Aim: For the user to be able to remove from their order</h3>
+
+	<h4>Rough Program Plan</h4>
+	<img class="img-responsive" src="assets/img/sprint_4_planning.jpg" alt=""> 
+
+	<h3>Sprint 4 Board in Progress</h3>
+	<img class="img-responsive-1" src="assets/img/sprint_4_project_backlog.jpg" alt=""> 
+
+	<h3>Basic Test of Program</h3>
+	<img class="img-responsive" src="assets/img/.png" alt=""> 
+
+
+	<h3>A problem I came across whilst testing my code is that when you delete a pasta 
+		completely (2 pastas were in the order and the user removes the 2) is that when
+	reviewing the order the pasta saying 0 x and the pasta. This can be seen below.  </h3>
+	<img class="img-responsive" src="assets/img/sprint_4_problem.jpg" alt=""> 
+
+	<h2>Trialling</h2>
+	<h3>I trialled two different way to fix the problem above</h3>
+	<h4>First I tried to use order_list.remove to try and remove the pasta when it equalled 0.</h4>
+	<img class="img-responsive" src="assets/img/sprint_4removetrial.jpg" alt=""> 
+	<h4>This did not work as when using remove you have use the actual name of the thing in the list. Eg. Ravioli di Ricotta
+		So order_list.remove wouldn't work as I cannot predict which pasta needs to be removed from the list. 
+	</h4>
+
+	<h3>I trialled using order_list.pop</h3>
+	<img class="img-responsive" src="assets/img/sprint_4_code_fixed.jpg" alt=""> 
+	<h3>This worked as I could it would remove "which_index" and did not need the specific name.  </h3>
+	
+	<h3>This is what the output looks like now that it's fixed</h3>
+	<img class="img-responsive" src="assets/img/sprint_4_output_fixed.jpg" alt=""> 
+
+	<h3>In order to make testing my code quicker. I put some pasta into the order_list.</h3>
+	<img class="img-responsive" src="assets/img/order_list.jpg" alt=""> 
+
+
+
+	<h3>Sprint 4 Review</h3>
+	<h4> In this sprint, I added in a delete_from_order function. This enables the user to be able to 
+		delete an item from their order. The user is able to choose which pasta they would like to remove and how
+		many. A problem that occured is that if user trys to remove more of a certain pasta when than they have in their order. 
+		When this happens in the review function the order will show up as -1 (or how every many) x the pasta. To fix I changed it so that 
+		if the user try to delete more pastas that the amount they have ordered it won't go into negatives and will just remove that pasta 
+		completely. This should be fixed later but doesn't really effect the user if it is not. In sprint 5, I will be adding in a function 
+		so that the user can choose delivery or pick up. 
+	</h4>
+
+	<h3>Evidence of github push for sprint 4</h3>
+	<img class="img-responsive" src="assets/img/sprint_4_push_1.jpg" alt=""> 
+	<img class="img-responsive" src="assets/img/sprint_4_push_2.jpg" alt=""> 
+	<img class="img-responsive" src="assets/img/sprint_4_push_3.jpg" alt=""> 
+
+
+	<h3>Update on my overall project backlog</h3>
+	<img class="img-responsive-1" src="assets/img/update_project_backlog.jpg" alt=""> 
+
+	<h1>Sprint Five</h1>
+
+	<h3>Aim: For the user to be able to choose  deliverly or pick up for their pasta order. </h3>
+
+	<h4>Rough Program Plan</h4>
+	<img class="img-responsive" src="assets/img/sprint_5_planning.jpg" alt=""> 
+	<img class="img-responsive" src="assets/img/sprint_5_planning_2.jpg" alt=""> 
+
+
+	<h3>Sprint 5 Board in Progress</h3>
+	<img class="img-responsive-1" src="assets/img/sprint_5_projectbacklog.png" alt=""> 
+
+	<h3>Basic Test of Program</h3>
+	<img class="img-responsive" src="assets/img/sprint_5_basic_run.jpg" alt=""> 
+	<img class="img-responsive" src="assets/img/sprint_5_basicrun_2.jpg" alt=""> 
+
+	<h3>Adding the delivery fee</h3>
+
+	<img class="img-responsive" src="assets/img/sprint_5_deliveryfee.jpg" alt=""> 
+	<h4>Code that I added in the review function so that a delivery fee of $3 would
+		be added to the total. I made a delivery_details and pickup_details list in the main
+		function. In the delivery_pick_up function when it was delivery the details would be added to 
+		both the customer_details list and delivery_details list and if the user chose pickup then the 
+		details are added into both customer_details and the pickup_details list. I did this so that 
+		I could have the pickup_details and delivery details in different lists but also have a list (customer_details)
+		which have either. 
+	</h4>
+
+	<h3>If user trys to enter their pickup or delivery details twice.</h3>
+	<img class="img-responsive" src="assets/img/sprint_5_details_twice.jpg" alt=""> 
+	<h4>This is the code that stopped the user from adding their details twice. If the 
+		customer_details list is full then the program will ask if the user would like to 
+		clear the details previously entered or exit back to the menu. If the user would like to
+		clear the previous information then all three list customer_details, pickup_details and 
+		delivery_details are cleared. This is so if the user previously entered delivery and then 
+		wanted to change to pickup the delivery fee wouldn't be there and delivery_details was also cleared. 
+	</h4>
+	
+	<h3>Sprint 5 Review</h3>
+	<h4> In this sprint, I added in a delivery_pick_up function. The user is able to choose if they want to pick up their pasta
+		or have it delivered. I also added in a delivery fee of $3. I also made it so that if the user tried to enter their 
+		customer details twice the program asks them whether they want to clear the previous details or if the original details were correct and 
+		continue back to main menu. In this sprint, I also made it so that if order_list is empty and the user tries to review their order, 
+		"You have nothing in your order" prints. In the next sprint, I am going to make a confirm_order function where the user can confirm 
+		their order. </h4>
+
+		<h3>Evidence of github push for Sprint 5</h3>
+		<img class="img-responsive" src="assets/img/sprint_5_push.jpg" alt=""> 
+
+
+<h1>Sprint 6</h1>
+
+<h3>Aim: Create a confirm_order function in which the user can confirm their order</h3>
+
+<h4>Rough Program Plan</h4>
+<img class="img-responsive" src="assets/img/sprint_6_planning.jpg" alt=""> 
+
+<h3>Sprint 6 Board in Progress</h3>
+<img class="img-responsive-1" src="assets/img/sprint_6_projectbacklog.jpg" alt=""> 
+
+<h3>Basic Test of Program</h3>
+<img class="img-responsive" src="assets/img/sprint_6_basicrun.jpg" alt=""> 
+
+<h3>If the user tries to confirm order without either any customer_details in their order. 
+	This is what the program will output. 
+</h3>
+<img class="img-responsive" src="assets/img/sprint_6_confirm_detailnot.jpg" alt=""> 
+<h3> If the user tries to confirm order without any pasta in thier order. This is what the 
+	program will output. 
+</h3>
+<img class="img-responsive" src="assets/img/sprint_6_nopasta.jpg" alt=""> 
+
+<h3>Sprint 6 Review</h3>
+<h4> In the sprint, I added a confirm_order function which enables the user to be able to see their customer details and 
+	order and then confirm order if they want to. The function checks if both customer_details and order_list is not empty.
+	If either is empty the program will print either "You have no pastas in your order. Order a pasta before you confirm your order" or 
+	"You have not entered your customer details. You cannot confirm order without filling out your customer details first". If they 
+	are both not empty, then both information about the customer details and the users order is printed. The user can then either confirm 
+	order or not confirm order in which they will be sent back to the main menu. The key problem at the moment is validation. None of the user
+	inputs are validated so in the next sprint I will be validating all user inputs. 
+	</h4>
+
+	<h3>Evidence of github push for sprint 6</h3>
+	<img class="img-responsive" src="assets/img/sprint_6_push.jpg" alt=""> 
+	<img class="img-responsive" src="assets/img/sprint_6_push_2.jpg" alt=""> 
+
+
+	<h1>Sprint 7</h1>
+
+	<h3>Aim: To validate all user inputs</h3>
+	
+	<h4>Rough Program Plan</h4>
+	<img class="img-responsive" src="assets/im" alt=""> 
+	
+	<h3>Sprint 7 Board in Progress</h3>
+	<img class="img-responsive-1" src="assets/img/sprint_7_projectbacklog.jpg" alt=""> 
+	
+	<h3>Basic Test of Program</h3>
+	<img class="img-responsive" src="assets/img/example of validation_1.jpg" alt=""> 
+	<h3></h3>
+	<img class="img-responsive" src="assets/img/exampleofvalidation_2.jpg" alt="">
+	<p></p>
+	<img class="img-responsive" src="assets/img/sprint_7_validation.jpg" alt=""> 
+	<h3>The output above shows some key examples of validation in my program. </h3>
+
+	<h3>Sprint 7 Review</h3>
+	<h4> In this sprint, I validated all the user inputs. This means that no input should cause an error. I put some of
+		this validation in the get_string and get_integer function but also made a lot of loops for the strings. In this sprint, I also
+		tried to make the program more user friendlly with nicer and clear messages to the user so it is easy to use. In both the add to order 
+		and delete from order function if the user enters a index that is not availible. The error message "You have not entered a valid number"
+		will print and if the user enter anything thats not a number an error message "You have not entered a number" will print. When ever the user
+		has a choice between either certain letters and the user doesn't press the right letter. An error message will also print. Telling the user
+		to try again. When collecting the delivery and pick up details, there are certain requirements that the user needs to meet. 
+		The users name must be 2 letters or longer. The users phone number must only contain digits and be inbetween 5 - 12 numbers long. 
+		And for delivery the address must be 5 or more characters long. If the user fails to follow the requirements an message will print
+		and then they will be able to try again. In this sprint, I also realised that if the user tried to delete pasta when they didn't have any
+		pasta in the order, it caused a problem. So I added in checking if order_list is empty before continuing in the delete_from_order function. 
+	</h4>
+
+	<h3>Final Code</h3>
+	<h4>I edited a few parts of my code after sprint 7. Mainly only small things. But one of the main things I did change is that 
+		when the user tries to enter anything other than numbers when entering their phone number it will not work and they will have to 
+		enter it again only with numbers. 
+	</h4>
+
+	<h3>This is evidence of the final push to github</h3>
+	<img class="img-responsive" src="assets/img/final_git_push.jpg" alt=""> 
+
+	
+<h2>Addressing Relevant Implications</h2>
+
+<h3>Usability</h3>
+<h4>In my program, the Usability implication can be seen 
+	as I created validation functions to ensure appropriate entry. All the 
+	user inputs are validated with clear messages to help the user fix their error and 
+	move foward with the appropriate actions. I also used a simple menu system which was like 
+	a home screen. This is make it easy for the users to work the program as the home screen makes 
+	it clear to the user the options availible. 
+</h4>
+
+<h3>Functionality</h3>
+<h4> In my program, I have shown the functionality implication as I thoroughly tested at the end of each sprint to make sure that 
+	everything was working as I intended. I also ran a full user test with a real user to test the program
+	under unpredictable conditions. This is so that I can make sure that my program does not crash and is working as intended. 
+</h4>
+
+<h3> Sustainability and Future Proofing</h3>
+<h4> The sustainability and future proofing implication is shown in my program 
+	as I have used a function based build where every each feature is a function. For each new feature, 
+	you can create a new function and it does not impact what is already there. This makes it  
+	easy to add on new features in the future. My whole program is also commented and doctyped which 
+	would make it easier if another developer was to try to understand it. 
+	features. </h4>
+
+
+
+
+
+
+			
+			
+			</div>
+			<div class="footer">
+				&copy; Copyright 2015
+			</div>
+		</div>
+	</body>
+</html>
